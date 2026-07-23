@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New Hire Onboarding</title>
+
+<title>Roche New Hire Onboarding</title>
 
 <style>
+
 body {
     font-family: Arial, "Microsoft YaHei", sans-serif;
     background-color: #f5f7fa;
+    margin: 0;
+    padding: 20px;
     text-align: center;
-    padding: 40px 20px;
 }
 
 .container {
     max-width: 500px;
-    margin: auto;
+    margin: 40px auto;
     background: white;
     padding: 30px;
     border-radius: 15px;
@@ -43,29 +47,137 @@ p {
 .button:hover {
     background-color: #004999;
 }
+
+.notice {
+    font-size: 12px;
+    color: #777;
+    margin-top: 30px;
+}
+
+
+/* 弹窗 */
+
+#noticeBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.noticeContent {
+    background:white;
+    width:80%;
+    max-width:400px;
+    padding:25px;
+    border-radius:15px;
+}
+
+.noticeContent h2 {
+    font-size:20px;
+}
+
+.noticeContent p {
+    font-size:14px;
+    line-height:1.6;
+}
+
+.enterBtn {
+    background:#0066cc;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:16px;
+}
+
 </style>
 
 </head>
 
+
 <body>
 
-</script>
+
+<!-- 访问声明 -->
+
+<div id="noticeBox">
+
+<div class="noticeContent">
+
+<h2>🔒 访问声明</h2>
+
+<p>
+此页面及其中包含的资料仅供罗氏（Roche）授权员工用于新员工入职相关事项参考。
+</p>
+
+<p>
+请勿将二维码、网页链接或文件内容分享给未经授权的人员。
+</p>
+
+<p>
+感谢您共同维护公司信息安全。
+</p>
+
+<button class="enterBtn" onclick="enterPage()">
+我已了解并进入
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 首页内容 -->
 
 <div class="container">
 
 <h1>欢迎加入罗氏</h1>
 
-<p>新入职用户 Onboarding 指南</p>
+<p>
+新入职用户 Onboarding 指南
+</p>
+
 
 <a class="button" href="pingid-setup.pdf">
 📱 PingID 配置
 </a>
 
+
 <a class="button" href="change-initial-password.pdf">
 🔑 修改初始密码
 </a>
 
+
+<div class="notice">
+
+保密声明：  
+本页面仅限罗氏内部授权员工访问。  
+请勿分享二维码或相关资料。
+
 </div>
 
+
+</div>
+
+
+
+<script>
+
+function enterPage(){
+
+document.getElementById("noticeBox").style.display="none";
+
+}
+
+</script>
+
+
 </body>
+
 </html>
