@@ -1,183 +1,229 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Roche New Hire Onboarding</title>
+<title>Roche New Hire Onboarding Portal</title>
 
 <style>
-
-body {
-    font-family: Arial, "Microsoft YaHei", sans-serif;
-    background-color: #f5f7fa;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
+body{
+    margin:0;
+    font-family:Arial,"Microsoft YaHei",sans-serif;
+    background:#f4f7fb;
+    color:#333;
 }
 
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
+.container{
+    max-width:700px;
+    margin:30px auto;
+    background:#fff;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
 
-h1 {
-    color: #333;
+h1{
+    text-align:center;
+    color:#005EB8;
+    margin-bottom:5px;
 }
 
-p {
-    color: #666;
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
 }
 
-.button {
-    display: block;
-    margin: 15px 0;
-    padding: 15px;
-    background-color: #0066cc;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
+.section{
+    margin-top:25px;
 }
 
-.button:hover {
-    background-color: #004999;
-}
-
-.notice {
-    font-size: 12px;
-    color: #777;
-    margin-top: 30px;
-}
-
-
-/* 弹窗 */
-
-#noticeBox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.5);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.noticeContent {
-    background:white;
-    width:80%;
-    max-width:400px;
-    padding:25px;
-    border-radius:15px;
-}
-
-.noticeContent h2 {
+.section h2{
+    color:#005EB8;
+    border-left:5px solid #005EB8;
+    padding-left:10px;
     font-size:20px;
 }
 
-.noticeContent p {
-    font-size:14px;
-    line-height:1.6;
+.button{
+    display:block;
+    background:#005EB8;
+    color:#fff;
+    text-decoration:none;
+    padding:16px;
+    margin:12px 0;
+    border-radius:10px;
+    transition:.2s;
+    font-size:17px;
+    font-weight:bold;
 }
 
-.enterBtn {
-    background:#0066cc;
+.button:hover{
+    background:#00458A;
+}
+
+.desc{
+    display:block;
+    font-size:13px;
+    font-weight:normal;
+    margin-top:4px;
+    color:#EAF4FF;
+}
+
+.footer{
+    margin-top:40px;
+    text-align:center;
+    font-size:13px;
+    color:#666;
+    line-height:1.8;
+}
+
+.noticeBox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.noticeContent{
+    width:90%;
+    max-width:480px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:left;
+}
+
+.noticeContent h2{
+    color:#C00000;
+    margin-top:0;
+}
+
+.noticeContent p{
+    line-height:1.7;
+}
+
+.enterBtn{
+    width:100%;
+    margin-top:20px;
+    background:#005EB8;
     color:white;
     border:none;
-    padding:12px 25px;
+    padding:14px;
     border-radius:8px;
     font-size:16px;
+    cursor:pointer;
 }
 
+.enterBtn:hover{
+    background:#00458A;
+}
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- 访问声明 -->
-
-<div id="noticeBox">
+<div class="noticeBox" id="noticeBox">
 
 <div class="noticeContent">
 
-<h2>🔒 访问声明</h2>
+<h2>🔒 Access Notice</h2>
 
 <p>
-此页面及其中包含的资料仅供罗氏（Roche）授权员工用于新员工入职相关事项参考。
+This page and all documents contained within are intended for
+<strong>authorized Roche employees only.</strong>
 </p>
 
 <p>
-请勿将二维码、网页链接或文件内容分享给未经授权的人员。
+Please do not share this QR code, website link, or any documents with
+unauthorized persons.
 </p>
 
 <p>
-感谢您共同维护公司信息安全。
+By clicking <strong>"I Understand & Continue"</strong>, you acknowledge that you are accessing Roche internal onboarding resources.
 </p>
 
-<button class="enterBtn" onclick="enterPage()">
-我已了解并进入
+<button class="enterBtn" onclick="closeNotice()">
+I Understand & Continue
 </button>
 
 </div>
 
 </div>
 
-
-
-<!-- 首页内容 -->
-
 <div class="container">
 
-<h1>欢迎加入罗氏</h1>
+<h1>🏢 Roche New Hire Onboarding Portal</h1>
 
-<p>
-新入职用户 Onboarding 指南
+<p class="subtitle">
+Welcome to Roche! Please select the guide you need below.
 </p>
 
+<div class="section">
 
-<a class="button" href="PINGID-setup.pdf">
-📱 PingID 配置
+<h2>🔑 Account & Password</h2>
+
+<a class="button" href="initial-password.pdf" target="_blank">
+🔐 Initial Password
+<span class="desc">View your initial account password</span>
 </a>
 
-
-<a class="button" href="self-service-password-change.pdf">
-🔑 修改初始密码
+<a class="button" href="self-service-password-change.pdf" target="_blank">
+🔑 Change Initial Password
+<span class="desc">Change your password after first login</span>
 </a>
 
-
-<div class="notice">
-
-保密声明：  
-本页面仅限罗氏内部授权员工访问。  
-请勿分享二维码或相关资料。
+<a class="button" href="pingid-setup.pdf" target="_blank">
+📱 PingID Setup
+<span class="desc">Configure multi-factor authentication</span>
+</a>
 
 </div>
 
+<div class="section">
+
+<h2>💻 Company Device</h2>
+
+<a class="button" href="device-allocation.pdf" target="_blank">
+💻 Device Allocation
+<span class="desc">Company device collection & confirmation</span>
+</a>
 
 </div>
 
+<div class="footer">
 
+<strong>IT Support</strong><br>
+
+If you encounter any issues, please contact the Roche IT Service Desk.
+
+<br><br>
+
+Version 1.1<br>
+Last Updated: July 2026
+
+<br><br>
+
+© Roche Internal Use Only
+
+</div>
+
+</div>
 
 <script>
 
-function enterPage(){
-
+function closeNotice(){
 document.getElementById("noticeBox").style.display="none";
-
 }
 
 </script>
 
-
 </body>
-
 </html>
